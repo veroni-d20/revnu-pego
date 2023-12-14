@@ -1,0 +1,524 @@
+{
+  "address": "0x2e1219a47eA42a5dE953EF6E0aAd9f4A4C1a21a0",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "revnuTokenAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bountyId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "bountyCreator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "actionId",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "actionType",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "actionCount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "noOfClaims",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "reward",
+          "type": "uint256"
+        }
+      ],
+      "name": "BountyAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bountyId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "claimer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "claimHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "claimReward",
+          "type": "uint256"
+        }
+      ],
+      "name": "BountyClaimed",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "_bountiesCounter",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "bountyRegistry",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "bountyId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "bountyCreator",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "actionId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "actionType",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "actionCount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "noOfClaims",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "reward",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_bountyId",
+          "type": "uint256"
+        }
+      ],
+      "name": "claimBounty",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "claimEarnings",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "claimRegistry",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "bountyId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "claimer",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "claimHash",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_actionId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_actionType",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_actionCount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_reward",
+          "type": "uint256"
+        }
+      ],
+      "name": "createBounty",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getLatestBountyId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "revnuToken",
+      "outputs": [
+        {
+          "internalType": "contract RevnuToken",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xc523d28140b78b7f074f769e59afa3afcf29089cb85146c3e74ae59216b40a2e",
+  "receipt": {
+    "to": null,
+    "from": "0x0cfecb5D359E6C59ABd1d2Aa794F52C15055f451",
+    "contractAddress": "0x2e1219a47eA42a5dE953EF6E0aAd9f4A4C1a21a0",
+    "transactionIndex": 0,
+    "gasUsed": "773857",
+    "logsBloom": "0x00000000000000000100000000000000000000000000000000000010000000040000000000000020000000000000000000008000000000000000000000000000000000000000000000000000000000800000000000000000000100000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000040000000000000200000000000000000000000000000000000000000000000000000000000004000000000000000000001000000000000000000000000000000100000001000000000000000000000000000000000000000000000000000000000000000100000",
+    "blockHash": "0x731e81e7a4b1667a9d8b87d73426b52065bc8b015854375bfadd925a770497ba",
+    "transactionHash": "0xc523d28140b78b7f074f769e59afa3afcf29089cb85146c3e74ae59216b40a2e",
+    "logs": [
+      {
+        "transactionIndex": 0,
+        "blockNumber": 40503639,
+        "transactionHash": "0xc523d28140b78b7f074f769e59afa3afcf29089cb85146c3e74ae59216b40a2e",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x0000000000000000000000000cfecb5d359e6c59abd1d2aa794f52c15055f451",
+          "0x000000000000000000000000f903ba9e006193c1527bfbe65fe2123704ea3f99"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000015fe8cfbff61f00000000000000000000000000000000000000000000000000bdeba07ea3fb16a0000000000000000000000000000000000000000000011620adc1560c8c7863d0000000000000000000000000000000000000000000000000bc8bb7aee404f7a0000000000000000000000000000000000000000000011620af213edc4c6e82d",
+        "logIndex": 0,
+        "blockHash": "0x731e81e7a4b1667a9d8b87d73426b52065bc8b015854375bfadd925a770497ba"
+      }
+    ],
+    "blockNumber": 40503639,
+    "cumulativeGasUsed": "773857",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xe4c9EfbC5267F1616474a7B2ec26c1B7261F05D7"
+  ],
+  "numDeployments": 3,
+  "solcInputHash": "8d02b0c7985ddce99740ec269e7d799e",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"revnuTokenAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bountyCreator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"actionId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"actionType\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"actionCount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"noOfClaims\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"}],\"name\":\"BountyAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"claimer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"claimHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"claimReward\",\"type\":\"uint256\"}],\"name\":\"BountyClaimed\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"_bountiesCounter\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"bountyRegistry\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"bountyCreator\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"actionId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"actionType\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"actionCount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"noOfClaims\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_bountyId\",\"type\":\"uint256\"}],\"name\":\"claimBounty\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"claimEarnings\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"claimRegistry\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"claimer\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"claimHash\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_actionId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_actionType\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_actionCount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_reward\",\"type\":\"uint256\"}],\"name\":\"createBounty\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLatestBountyId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"revnuToken\",\"outputs\":[{\"internalType\":\"contract RevnuToken\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/RevnuRegistry.sol\":\"RevnuRegistry\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (token/ERC20/ERC20.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./IERC20.sol\\\";\\nimport \\\"./extensions/IERC20Metadata.sol\\\";\\nimport \\\"../../utils/Context.sol\\\";\\n\\n/**\\n * @dev Implementation of the {IERC20} interface.\\n *\\n * This implementation is agnostic to the way tokens are created. This means\\n * that a supply mechanism has to be added in a derived contract using {_mint}.\\n * For a generic mechanism see {ERC20PresetMinterPauser}.\\n *\\n * TIP: For a detailed writeup see our guide\\n * https://forum.openzeppelin.com/t/how-to-implement-erc20-supply-mechanisms/226[How\\n * to implement supply mechanisms].\\n *\\n * We have followed general OpenZeppelin Contracts guidelines: functions revert\\n * instead returning `false` on failure. This behavior is nonetheless\\n * conventional and does not conflict with the expectations of ERC20\\n * applications.\\n *\\n * Additionally, an {Approval} event is emitted on calls to {transferFrom}.\\n * This allows applications to reconstruct the allowance for all accounts just\\n * by listening to said events. Other implementations of the EIP may not emit\\n * these events, as it isn't required by the specification.\\n *\\n * Finally, the non-standard {decreaseAllowance} and {increaseAllowance}\\n * functions have been added to mitigate the well-known issues around setting\\n * allowances. See {IERC20-approve}.\\n */\\ncontract ERC20 is Context, IERC20, IERC20Metadata {\\n    mapping(address => uint256) private _balances;\\n\\n    mapping(address => mapping(address => uint256)) private _allowances;\\n\\n    uint256 private _totalSupply;\\n\\n    string private _name;\\n    string private _symbol;\\n\\n    /**\\n     * @dev Sets the values for {name} and {symbol}.\\n     *\\n     * The default value of {decimals} is 18. To select a different value for\\n     * {decimals} you should overload it.\\n     *\\n     * All two of these values are immutable: they can only be set once during\\n     * construction.\\n     */\\n    constructor(string memory name_, string memory symbol_) {\\n        _name = name_;\\n        _symbol = symbol_;\\n    }\\n\\n    /**\\n     * @dev Returns the name of the token.\\n     */\\n    function name() public view virtual override returns (string memory) {\\n        return _name;\\n    }\\n\\n    /**\\n     * @dev Returns the symbol of the token, usually a shorter version of the\\n     * name.\\n     */\\n    function symbol() public view virtual override returns (string memory) {\\n        return _symbol;\\n    }\\n\\n    /**\\n     * @dev Returns the number of decimals used to get its user representation.\\n     * For example, if `decimals` equals `2`, a balance of `505` tokens should\\n     * be displayed to a user as `5.05` (`505 / 10 ** 2`).\\n     *\\n     * Tokens usually opt for a value of 18, imitating the relationship between\\n     * Ether and Wei. This is the value {ERC20} uses, unless this function is\\n     * overridden;\\n     *\\n     * NOTE: This information is only used for _display_ purposes: it in\\n     * no way affects any of the arithmetic of the contract, including\\n     * {IERC20-balanceOf} and {IERC20-transfer}.\\n     */\\n    function decimals() public view virtual override returns (uint8) {\\n        return 18;\\n    }\\n\\n    /**\\n     * @dev See {IERC20-totalSupply}.\\n     */\\n    function totalSupply() public view virtual override returns (uint256) {\\n        return _totalSupply;\\n    }\\n\\n    /**\\n     * @dev See {IERC20-balanceOf}.\\n     */\\n    function balanceOf(address account) public view virtual override returns (uint256) {\\n        return _balances[account];\\n    }\\n\\n    /**\\n     * @dev See {IERC20-transfer}.\\n     *\\n     * Requirements:\\n     *\\n     * - `to` cannot be the zero address.\\n     * - the caller must have a balance of at least `amount`.\\n     */\\n    function transfer(address to, uint256 amount) public virtual override returns (bool) {\\n        address owner = _msgSender();\\n        _transfer(owner, to, amount);\\n        return true;\\n    }\\n\\n    /**\\n     * @dev See {IERC20-allowance}.\\n     */\\n    function allowance(address owner, address spender) public view virtual override returns (uint256) {\\n        return _allowances[owner][spender];\\n    }\\n\\n    /**\\n     * @dev See {IERC20-approve}.\\n     *\\n     * NOTE: If `amount` is the maximum `uint256`, the allowance is not updated on\\n     * `transferFrom`. This is semantically equivalent to an infinite approval.\\n     *\\n     * Requirements:\\n     *\\n     * - `spender` cannot be the zero address.\\n     */\\n    function approve(address spender, uint256 amount) public virtual override returns (bool) {\\n        address owner = _msgSender();\\n        _approve(owner, spender, amount);\\n        return true;\\n    }\\n\\n    /**\\n     * @dev See {IERC20-transferFrom}.\\n     *\\n     * Emits an {Approval} event indicating the updated allowance. This is not\\n     * required by the EIP. See the note at the beginning of {ERC20}.\\n     *\\n     * NOTE: Does not update the allowance if the current allowance\\n     * is the maximum `uint256`.\\n     *\\n     * Requirements:\\n     *\\n     * - `from` and `to` cannot be the zero address.\\n     * - `from` must have a balance of at least `amount`.\\n     * - the caller must have allowance for ``from``'s tokens of at least\\n     * `amount`.\\n     */\\n    function transferFrom(\\n        address from,\\n        address to,\\n        uint256 amount\\n    ) public virtual override returns (bool) {\\n        address spender = _msgSender();\\n        _spendAllowance(from, spender, amount);\\n        _transfer(from, to, amount);\\n        return true;\\n    }\\n\\n    /**\\n     * @dev Atomically increases the allowance granted to `spender` by the caller.\\n     *\\n     * This is an alternative to {approve} that can be used as a mitigation for\\n     * problems described in {IERC20-approve}.\\n     *\\n     * Emits an {Approval} event indicating the updated allowance.\\n     *\\n     * Requirements:\\n     *\\n     * - `spender` cannot be the zero address.\\n     */\\n    function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\\n        address owner = _msgSender();\\n        _approve(owner, spender, allowance(owner, spender) + addedValue);\\n        return true;\\n    }\\n\\n    /**\\n     * @dev Atomically decreases the allowance granted to `spender` by the caller.\\n     *\\n     * This is an alternative to {approve} that can be used as a mitigation for\\n     * problems described in {IERC20-approve}.\\n     *\\n     * Emits an {Approval} event indicating the updated allowance.\\n     *\\n     * Requirements:\\n     *\\n     * - `spender` cannot be the zero address.\\n     * - `spender` must have allowance for the caller of at least\\n     * `subtractedValue`.\\n     */\\n    function decreaseAllowance(address spender, uint256 subtractedValue) public virtual returns (bool) {\\n        address owner = _msgSender();\\n        uint256 currentAllowance = allowance(owner, spender);\\n        require(currentAllowance >= subtractedValue, \\\"ERC20: decreased allowance below zero\\\");\\n        unchecked {\\n            _approve(owner, spender, currentAllowance - subtractedValue);\\n        }\\n\\n        return true;\\n    }\\n\\n    /**\\n     * @dev Moves `amount` of tokens from `from` to `to`.\\n     *\\n     * This internal function is equivalent to {transfer}, and can be used to\\n     * e.g. implement automatic token fees, slashing mechanisms, etc.\\n     *\\n     * Emits a {Transfer} event.\\n     *\\n     * Requirements:\\n     *\\n     * - `from` cannot be the zero address.\\n     * - `to` cannot be the zero address.\\n     * - `from` must have a balance of at least `amount`.\\n     */\\n    function _transfer(\\n        address from,\\n        address to,\\n        uint256 amount\\n    ) internal virtual {\\n        require(from != address(0), \\\"ERC20: transfer from the zero address\\\");\\n        require(to != address(0), \\\"ERC20: transfer to the zero address\\\");\\n\\n        _beforeTokenTransfer(from, to, amount);\\n\\n        uint256 fromBalance = _balances[from];\\n        require(fromBalance >= amount, \\\"ERC20: transfer amount exceeds balance\\\");\\n        unchecked {\\n            _balances[from] = fromBalance - amount;\\n            // Overflow not possible: the sum of all balances is capped by totalSupply, and the sum is preserved by\\n            // decrementing then incrementing.\\n            _balances[to] += amount;\\n        }\\n\\n        emit Transfer(from, to, amount);\\n\\n        _afterTokenTransfer(from, to, amount);\\n    }\\n\\n    /** @dev Creates `amount` tokens and assigns them to `account`, increasing\\n     * the total supply.\\n     *\\n     * Emits a {Transfer} event with `from` set to the zero address.\\n     *\\n     * Requirements:\\n     *\\n     * - `account` cannot be the zero address.\\n     */\\n    function _mint(address account, uint256 amount) internal virtual {\\n        require(account != address(0), \\\"ERC20: mint to the zero address\\\");\\n\\n        _beforeTokenTransfer(address(0), account, amount);\\n\\n        _totalSupply += amount;\\n        unchecked {\\n            // Overflow not possible: balance + amount is at most totalSupply + amount, which is checked above.\\n            _balances[account] += amount;\\n        }\\n        emit Transfer(address(0), account, amount);\\n\\n        _afterTokenTransfer(address(0), account, amount);\\n    }\\n\\n    /**\\n     * @dev Destroys `amount` tokens from `account`, reducing the\\n     * total supply.\\n     *\\n     * Emits a {Transfer} event with `to` set to the zero address.\\n     *\\n     * Requirements:\\n     *\\n     * - `account` cannot be the zero address.\\n     * - `account` must have at least `amount` tokens.\\n     */\\n    function _burn(address account, uint256 amount) internal virtual {\\n        require(account != address(0), \\\"ERC20: burn from the zero address\\\");\\n\\n        _beforeTokenTransfer(account, address(0), amount);\\n\\n        uint256 accountBalance = _balances[account];\\n        require(accountBalance >= amount, \\\"ERC20: burn amount exceeds balance\\\");\\n        unchecked {\\n            _balances[account] = accountBalance - amount;\\n            // Overflow not possible: amount <= accountBalance <= totalSupply.\\n            _totalSupply -= amount;\\n        }\\n\\n        emit Transfer(account, address(0), amount);\\n\\n        _afterTokenTransfer(account, address(0), amount);\\n    }\\n\\n    /**\\n     * @dev Sets `amount` as the allowance of `spender` over the `owner` s tokens.\\n     *\\n     * This internal function is equivalent to `approve`, and can be used to\\n     * e.g. set automatic allowances for certain subsystems, etc.\\n     *\\n     * Emits an {Approval} event.\\n     *\\n     * Requirements:\\n     *\\n     * - `owner` cannot be the zero address.\\n     * - `spender` cannot be the zero address.\\n     */\\n    function _approve(\\n        address owner,\\n        address spender,\\n        uint256 amount\\n    ) internal virtual {\\n        require(owner != address(0), \\\"ERC20: approve from the zero address\\\");\\n        require(spender != address(0), \\\"ERC20: approve to the zero address\\\");\\n\\n        _allowances[owner][spender] = amount;\\n        emit Approval(owner, spender, amount);\\n    }\\n\\n    /**\\n     * @dev Updates `owner` s allowance for `spender` based on spent `amount`.\\n     *\\n     * Does not update the allowance amount in case of infinite allowance.\\n     * Revert if not enough allowance is available.\\n     *\\n     * Might emit an {Approval} event.\\n     */\\n    function _spendAllowance(\\n        address owner,\\n        address spender,\\n        uint256 amount\\n    ) internal virtual {\\n        uint256 currentAllowance = allowance(owner, spender);\\n        if (currentAllowance != type(uint256).max) {\\n            require(currentAllowance >= amount, \\\"ERC20: insufficient allowance\\\");\\n            unchecked {\\n                _approve(owner, spender, currentAllowance - amount);\\n            }\\n        }\\n    }\\n\\n    /**\\n     * @dev Hook that is called before any transfer of tokens. This includes\\n     * minting and burning.\\n     *\\n     * Calling conditions:\\n     *\\n     * - when `from` and `to` are both non-zero, `amount` of ``from``'s tokens\\n     * will be transferred to `to`.\\n     * - when `from` is zero, `amount` tokens will be minted for `to`.\\n     * - when `to` is zero, `amount` of ``from``'s tokens will be burned.\\n     * - `from` and `to` are never both zero.\\n     *\\n     * To learn more about hooks, head to xref:ROOT:extending-contracts.adoc#using-hooks[Using Hooks].\\n     */\\n    function _beforeTokenTransfer(\\n        address from,\\n        address to,\\n        uint256 amount\\n    ) internal virtual {}\\n\\n    /**\\n     * @dev Hook that is called after any transfer of tokens. This includes\\n     * minting and burning.\\n     *\\n     * Calling conditions:\\n     *\\n     * - when `from` and `to` are both non-zero, `amount` of ``from``'s tokens\\n     * has been transferred to `to`.\\n     * - when `from` is zero, `amount` tokens have been minted for `to`.\\n     * - when `to` is zero, `amount` of ``from``'s tokens have been burned.\\n     * - `from` and `to` are never both zero.\\n     *\\n     * To learn more about hooks, head to xref:ROOT:extending-contracts.adoc#using-hooks[Using Hooks].\\n     */\\n    function _afterTokenTransfer(\\n        address from,\\n        address to,\\n        uint256 amount\\n    ) internal virtual {}\\n}\\n\",\"keccak256\":\"0x4ffc0547c02ad22925310c585c0f166f8759e2648a09e9b489100c42f15dd98d\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    /**\\n     * @dev Returns the amount of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the amount of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves `amount` tokens from the caller's account to `to`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address to, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Moves `amount` tokens from `from` to `to` using the\\n     * allowance mechanism. `amount` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(\\n        address from,\\n        address to,\\n        uint256 amount\\n    ) external returns (bool);\\n}\\n\",\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.5.0) (token/ERC20/extensions/ERC20Burnable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../ERC20.sol\\\";\\nimport \\\"../../../utils/Context.sol\\\";\\n\\n/**\\n * @dev Extension of {ERC20} that allows token holders to destroy both their own\\n * tokens and those that they have an allowance for, in a way that can be\\n * recognized off-chain (via event analysis).\\n */\\nabstract contract ERC20Burnable is Context, ERC20 {\\n    /**\\n     * @dev Destroys `amount` tokens from the caller.\\n     *\\n     * See {ERC20-_burn}.\\n     */\\n    function burn(uint256 amount) public virtual {\\n        _burn(_msgSender(), amount);\\n    }\\n\\n    /**\\n     * @dev Destroys `amount` tokens from `account`, deducting from the caller's\\n     * allowance.\\n     *\\n     * See {ERC20-_burn} and {ERC20-allowance}.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must have allowance for ``accounts``'s tokens of at least\\n     * `amount`.\\n     */\\n    function burnFrom(address account, uint256 amount) public virtual {\\n        _spendAllowance(account, _msgSender(), amount);\\n        _burn(account, amount);\\n    }\\n}\\n\",\"keccak256\":\"0x0d19410453cda55960a818e02bd7c18952a5c8fe7a3036e81f0d599f34487a7b\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (token/ERC20/extensions/IERC20Metadata.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../IERC20.sol\\\";\\n\\n/**\\n * @dev Interface for the optional metadata functions from the ERC20 standard.\\n *\\n * _Available since v4.1._\\n */\\ninterface IERC20Metadata is IERC20 {\\n    /**\\n     * @dev Returns the name of the token.\\n     */\\n    function name() external view returns (string memory);\\n\\n    /**\\n     * @dev Returns the symbol of the token.\\n     */\\n    function symbol() external view returns (string memory);\\n\\n    /**\\n     * @dev Returns the decimals places of the token.\\n     */\\n    function decimals() external view returns (uint8);\\n}\\n\",\"keccak256\":\"0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Counters.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Counters.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @title Counters\\n * @author Matt Condon (@shrugs)\\n * @dev Provides counters that can only be incremented, decremented or reset. This can be used e.g. to track the number\\n * of elements in a mapping, issuing ERC721 ids, or counting request ids.\\n *\\n * Include with `using Counters for Counters.Counter;`\\n */\\nlibrary Counters {\\n    struct Counter {\\n        // This variable should never be directly accessed by users of the library: interactions must be restricted to\\n        // the library's function. As of Solidity v0.5.2, this cannot be enforced, though there is a proposal to add\\n        // this feature: see https://github.com/ethereum/solidity/issues/4637\\n        uint256 _value; // default: 0\\n    }\\n\\n    function current(Counter storage counter) internal view returns (uint256) {\\n        return counter._value;\\n    }\\n\\n    function increment(Counter storage counter) internal {\\n        unchecked {\\n            counter._value += 1;\\n        }\\n    }\\n\\n    function decrement(Counter storage counter) internal {\\n        uint256 value = counter._value;\\n        require(value > 0, \\\"Counter: decrement overflow\\\");\\n        unchecked {\\n            counter._value = value - 1;\\n        }\\n    }\\n\\n    function reset(Counter storage counter) internal {\\n        counter._value = 0;\\n    }\\n}\\n\",\"keccak256\":\"0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1\",\"license\":\"MIT\"},\"contracts/RevnuRegistry.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.9;\\r\\n\\r\\n// Import OpenZeppelin ERC20 and Ownable for token and contract ownership management\\r\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\r\\nimport \\\"@openzeppelin/contracts/utils/Counters.sol\\\";\\r\\nimport \\\"./RevnuToken.sol\\\";\\r\\n\\r\\n// Hardhat console.log() for debugging\\r\\n// import \\\"hardhat/console.sol\\\";\\r\\n\\r\\ncontract RevnuRegistry{\\r\\n    using Counters for Counters.Counter;\\r\\n\\r\\n    RevnuToken public revnuToken;\\r\\n\\r\\n    Counters.Counter public _bountiesCounter; \\r\\n\\r\\n    constructor(address revnuTokenAddress){\\r\\n        revnuToken = RevnuToken(revnuTokenAddress);\\r\\n    }\\r\\n\\r\\n    // Struct to represent a Engagement Request entry\\r\\n    struct Bounty{\\r\\n        uint256 bountyId;\\r\\n        address bountyCreator;\\r\\n        string actionId;        // videoId, channelId, id, etc\\r\\n        string actionType;      // like, sub, comment, etc\\r\\n        uint actionCount;    // no. of likes or subscribers \\r\\n        uint noOfClaims;   // no. of likes or subscribers completed\\r\\n        uint256 reward;         // total amt (no.of likes * amt quoted)\\r\\n    }\\r\\n\\r\\n    // Struct to represent details of completed requests\\r\\n    struct Claim{ \\r\\n        uint256 bountyId;\\r\\n        address claimer;\\r\\n        bytes32 claimHash;\\r\\n    }\\r\\n\\r\\n    mapping(uint256 => Bounty) public bountyRegistry;\\r\\n    mapping(bytes32 => Claim) public claimRegistry;\\r\\n    mapping(address => uint256) public claimEarnings;\\r\\n\\r\\n    event BountyClaimed(uint256 bountyId, address claimer, bytes32 claimHash, uint256 claimReward);\\r\\n    event BountyAdded(uint256 bountyId, address bountyCreator, string actionId, string actionType, uint actionCount, uint noOfClaims, uint256 reward);\\r\\n\\r\\n    function createBounty(string memory _actionId, string memory _actionType, uint _actionCount, uint256 _reward) public payable{\\r\\n        // check balance \\r\\n        require(revnuToken.balanceOf(msg.sender) >= _reward, \\\"Insufficient Tokens\\\");\\r\\n        require(_actionCount != 0, \\\"ActionCount cannot be zero\\\");\\r\\n\\r\\n\\r\\n        _bountiesCounter.increment();\\r\\n        uint256 _bountyId = _bountiesCounter.current();\\r\\n        bountyRegistry[_bountyId] = Bounty(_bountyId, msg.sender, _actionId, _actionType, _actionCount, 0, _reward);\\r\\n\\r\\n        emit BountyAdded(_bountyId, msg.sender, _actionId, _actionType, _actionCount, 0, _reward);\\r\\n        \\r\\n        // Deposit reward tokens to contract\\r\\n        revnuToken.transferFrom(msg.sender, address(this), _reward);\\r\\n    }\\r\\n\\r\\n    function claimBounty(uint256 _bountyId) public payable{\\r\\n        // Check if bounty exists\\r\\n        require(bountyRegistry[_bountyId].bountyId == _bountyId, \\\"Bounty does not exist.\\\");\\r\\n\\r\\n        // Check if bounty is claimed\\r\\n        require(bountyRegistry[_bountyId].noOfClaims < bountyRegistry[_bountyId].actionCount, \\\"Bounty completed.\\\");\\r\\n\\r\\n\\r\\n        // Generate claimHash using bountyId and msg.sender\\r\\n        bytes32 _claimHash = keccak256(abi.encodePacked(_bountyId, msg.sender));\\r\\n\\r\\n        // Check if claimHash already exists\\r\\n        require(claimRegistry[_claimHash].claimHash != _claimHash, \\\"Bounty already claimed by user.\\\"); \\r\\n\\r\\n        claimRegistry[_claimHash] = Claim(_bountyId, msg.sender, _claimHash);\\r\\n        uint256 _claimReward = bountyRegistry[_bountyId].reward / bountyRegistry[_bountyId].actionCount; \\r\\n\\r\\n        // Increment Bounty noOfClaims\\r\\n        bountyRegistry[_bountyId].noOfClaims += 1;\\r\\n\\r\\n        // Increment user earning balance\\r\\n        claimEarnings[msg.sender] += _claimReward;\\r\\n\\r\\n        emit BountyClaimed(_bountyId, msg.sender, _claimHash, _claimReward); \\r\\n       \\r\\n        // Transfer amt\\r\\n        revnuToken.transfer(msg.sender, _claimReward);\\r\\n    }\\r\\n\\r\\n    function getLatestBountyId() public view returns(uint256){\\r\\n        return _bountiesCounter.current();\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x7706493defa741b3ca3403dfe7518def901951468e074c7f9d5dad5779276b27\",\"license\":\"MIT\"},\"contracts/RevnuToken.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.9;\\r\\n\\r\\nimport \\\"@openzeppelin/contracts/token/ERC20/ERC20.sol\\\";\\r\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\r\\nimport \\\"@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol\\\";\\r\\n\\r\\ncontract RevnuToken is ERC20, ERC20Burnable, Ownable {\\r\\n    uint256 public s_maxSupply = 10000000000000000000000;\\r\\n\\r\\n    constructor() ERC20(\\\"RevnuToken\\\", \\\"RVTK\\\") {\\r\\n        _mint(msg.sender, s_maxSupply);\\r\\n    }\\r\\n    \\r\\n    function mint(address to, uint256 amount) public onlyOwner {\\r\\n        _mint(to, amount);\\r\\n    }\\r\\n}\",\"keccak256\":\"0x1ef5634ab584c48d58407815fb82452fa6aff7e31eb17deba2695edec664eb36\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50604051610d2c380380610d2c83398101604081905261002f91610054565b600080546001600160a01b0319166001600160a01b0392909216919091179055610084565b60006020828403121561006657600080fd5b81516001600160a01b038116811461007d57600080fd5b9392505050565b610c99806100936000396000f3fe60806040526004361061007b5760003560e01c80639ab891ba1161004e5780639ab891ba1461013c578063a606971914610169578063aeb7c8a31461019c578063e31202c0146101d457600080fd5b806344021ad71461008057806356403b941461009557806379bbce71146100bd5780639aad017e14610125575b600080fd5b61009361008e36600461099c565b6101e7565b005b3480156100a157600080fd5b506100aa6104de565b6040519081526020015b60405180910390f35b3480156100c957600080fd5b506101026100d836600461099c565b60036020526000908152604090208054600182015460029092015490916001600160a01b03169083565b604080519384526001600160a01b039092166020840152908201526060016100b4565b34801561013157600080fd5b506001546100aa9081565b34801561014857600080fd5b506100aa6101573660046109b5565b60046020526000908152604090205481565b34801561017557600080fd5b5061018961018436600461099c565b6104ee565b6040516100b49796959493929190610a32565b3480156101a857600080fd5b506000546101bc906001600160a01b031681565b6040516001600160a01b0390911681526020016100b4565b6100936101e2366004610b31565b610644565b60008181526002602052604090205481146102425760405162461bcd60e51b81526020600482015260166024820152752137bab73a3c903237b2b9903737ba1032bc34b9ba1760511b60448201526064015b60405180910390fd5b600081815260026020526040902060048101546005909101541061029c5760405162461bcd60e51b81526020600482015260116024820152702137bab73a3c9031b7b6b83632ba32b21760791b6044820152606401610239565b600081336040516020016102cc92919091825260601b6bffffffffffffffffffffffff1916602082015260340190565b60408051601f198184030181529181528151602092830120600081815260039093529120600201549091508114156103465760405162461bcd60e51b815260206004820152601f60248201527f426f756e747920616c726561647920636c61696d656420627920757365722e006044820152606401610239565b604080516060810182528381523360208083019182528284018581526000868152600383528581209451855592516001850180546001600160a01b0319166001600160a01b03909216919091179055516002938401558582529190915290812060048101546006909101546103bb9190610ba5565b905060016002600085815260200190815260200160002060050160008282546103e49190610bc7565b90915550503360009081526004602052604081208054839290610408908490610bc7565b909155505060408051848152336020820152908101839052606081018290527f7f4af57e5bf7d0f67d0d2232aa09ed824c46d1399ffdabfcbd2e5692c2a9ba099060800160405180910390a160005460405163a9059cbb60e01b8152336004820152602481018390526001600160a01b039091169063a9059cbb90604401602060405180830381600087803b1580156104a057600080fd5b505af11580156104b4573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104d89190610bed565b50505050565b60006104e960015490565b905090565b600260208190526000918252604090912080546001820154928201805491936001600160a01b0316929161052190610c0f565b80601f016020809104026020016040519081016040528092919081815260200182805461054d90610c0f565b801561059a5780601f1061056f5761010080835404028352916020019161059a565b820191906000526020600020905b81548152906001019060200180831161057d57829003601f168201915b5050505050908060030180546105af90610c0f565b80601f01602080910402602001604051908101604052809291908181526020018280546105db90610c0f565b80156106285780601f106105fd57610100808354040283529160200191610628565b820191906000526020600020905b81548152906001019060200180831161060b57829003601f168201915b5050505050908060040154908060050154908060060154905087565b6000546040516370a0823160e01b815233600482015282916001600160a01b0316906370a082319060240160206040518083038186803b15801561068757600080fd5b505afa15801561069b573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106bf9190610c4a565b10156107035760405162461bcd60e51b8152602060048201526013602482015272496e73756666696369656e7420546f6b656e7360681b6044820152606401610239565b816107505760405162461bcd60e51b815260206004820152601a60248201527f416374696f6e436f756e742063616e6e6f74206265207a65726f0000000000006044820152606401610239565b61075e600180546001019055565b600061076960015490565b6040805160e0810182528281523360208083019182528284018a8152606084018a905260808401899052600060a0850181905260c0850189905286815260028084529590208451815592516001840180546001600160a01b0319166001600160a01b03909216919091179055518051959650929491936107ef9390850192910190610903565b506060820151805161080b916003840191602090910190610903565b506080820151816004015560a0820151816005015560c082015181600601559050507f16d92ebf8d1048dc9322cfd77b7ea85ffa1440e92b09dc45129944a0d30f8b0281338787876000886040516108699796959493929190610a32565b60405180910390a16000546040516323b872dd60e01b8152336004820152306024820152604481018490526001600160a01b03909116906323b872dd90606401602060405180830381600087803b1580156108c357600080fd5b505af11580156108d7573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108fb9190610bed565b505050505050565b82805461090f90610c0f565b90600052602060002090601f0160209004810192826109315760008555610977565b82601f1061094a57805160ff1916838001178555610977565b82800160010185558215610977579182015b8281111561097757825182559160200191906001019061095c565b50610983929150610987565b5090565b5b808211156109835760008155600101610988565b6000602082840312156109ae57600080fd5b5035919050565b6000602082840312156109c757600080fd5b81356001600160a01b03811681146109de57600080fd5b9392505050565b6000815180845260005b81811015610a0b576020818501810151868301820152016109ef565b81811115610a1d576000602083870101525b50601f01601f19169290920160200192915050565b8781526001600160a01b038716602082015260e060408201819052600090610a5c908301886109e5565b8281036060840152610a6e81886109e5565b6080840196909652505060a081019290925260c090910152949350505050565b634e487b7160e01b600052604160045260246000fd5b600082601f830112610ab557600080fd5b813567ffffffffffffffff80821115610ad057610ad0610a8e565b604051601f8301601f19908116603f01168101908282118183101715610af857610af8610a8e565b81604052838152866020858801011115610b1157600080fd5b836020870160208301376000602085830101528094505050505092915050565b60008060008060808587031215610b4757600080fd5b843567ffffffffffffffff80821115610b5f57600080fd5b610b6b88838901610aa4565b95506020870135915080821115610b8157600080fd5b50610b8e87828801610aa4565b949794965050505060408301359260600135919050565b600082610bc257634e487b7160e01b600052601260045260246000fd5b500490565b60008219821115610be857634e487b7160e01b600052601160045260246000fd5b500190565b600060208284031215610bff57600080fd5b815180151581146109de57600080fd5b600181811c90821680610c2357607f821691505b60208210811415610c4457634e487b7160e01b600052602260045260246000fd5b50919050565b600060208284031215610c5c57600080fd5b505191905056fea26469706673582212207401f2a6b99dee151942fc15953bff201fd7ab101e2354e9b1827d09882410cb64736f6c63430008090033",
+  "deployedBytecode": "0x60806040526004361061007b5760003560e01c80639ab891ba1161004e5780639ab891ba1461013c578063a606971914610169578063aeb7c8a31461019c578063e31202c0146101d457600080fd5b806344021ad71461008057806356403b941461009557806379bbce71146100bd5780639aad017e14610125575b600080fd5b61009361008e36600461099c565b6101e7565b005b3480156100a157600080fd5b506100aa6104de565b6040519081526020015b60405180910390f35b3480156100c957600080fd5b506101026100d836600461099c565b60036020526000908152604090208054600182015460029092015490916001600160a01b03169083565b604080519384526001600160a01b039092166020840152908201526060016100b4565b34801561013157600080fd5b506001546100aa9081565b34801561014857600080fd5b506100aa6101573660046109b5565b60046020526000908152604090205481565b34801561017557600080fd5b5061018961018436600461099c565b6104ee565b6040516100b49796959493929190610a32565b3480156101a857600080fd5b506000546101bc906001600160a01b031681565b6040516001600160a01b0390911681526020016100b4565b6100936101e2366004610b31565b610644565b60008181526002602052604090205481146102425760405162461bcd60e51b81526020600482015260166024820152752137bab73a3c903237b2b9903737ba1032bc34b9ba1760511b60448201526064015b60405180910390fd5b600081815260026020526040902060048101546005909101541061029c5760405162461bcd60e51b81526020600482015260116024820152702137bab73a3c9031b7b6b83632ba32b21760791b6044820152606401610239565b600081336040516020016102cc92919091825260601b6bffffffffffffffffffffffff1916602082015260340190565b60408051601f198184030181529181528151602092830120600081815260039093529120600201549091508114156103465760405162461bcd60e51b815260206004820152601f60248201527f426f756e747920616c726561647920636c61696d656420627920757365722e006044820152606401610239565b604080516060810182528381523360208083019182528284018581526000868152600383528581209451855592516001850180546001600160a01b0319166001600160a01b03909216919091179055516002938401558582529190915290812060048101546006909101546103bb9190610ba5565b905060016002600085815260200190815260200160002060050160008282546103e49190610bc7565b90915550503360009081526004602052604081208054839290610408908490610bc7565b909155505060408051848152336020820152908101839052606081018290527f7f4af57e5bf7d0f67d0d2232aa09ed824c46d1399ffdabfcbd2e5692c2a9ba099060800160405180910390a160005460405163a9059cbb60e01b8152336004820152602481018390526001600160a01b039091169063a9059cbb90604401602060405180830381600087803b1580156104a057600080fd5b505af11580156104b4573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104d89190610bed565b50505050565b60006104e960015490565b905090565b600260208190526000918252604090912080546001820154928201805491936001600160a01b0316929161052190610c0f565b80601f016020809104026020016040519081016040528092919081815260200182805461054d90610c0f565b801561059a5780601f1061056f5761010080835404028352916020019161059a565b820191906000526020600020905b81548152906001019060200180831161057d57829003601f168201915b5050505050908060030180546105af90610c0f565b80601f01602080910402602001604051908101604052809291908181526020018280546105db90610c0f565b80156106285780601f106105fd57610100808354040283529160200191610628565b820191906000526020600020905b81548152906001019060200180831161060b57829003601f168201915b5050505050908060040154908060050154908060060154905087565b6000546040516370a0823160e01b815233600482015282916001600160a01b0316906370a082319060240160206040518083038186803b15801561068757600080fd5b505afa15801561069b573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106bf9190610c4a565b10156107035760405162461bcd60e51b8152602060048201526013602482015272496e73756666696369656e7420546f6b656e7360681b6044820152606401610239565b816107505760405162461bcd60e51b815260206004820152601a60248201527f416374696f6e436f756e742063616e6e6f74206265207a65726f0000000000006044820152606401610239565b61075e600180546001019055565b600061076960015490565b6040805160e0810182528281523360208083019182528284018a8152606084018a905260808401899052600060a0850181905260c0850189905286815260028084529590208451815592516001840180546001600160a01b0319166001600160a01b03909216919091179055518051959650929491936107ef9390850192910190610903565b506060820151805161080b916003840191602090910190610903565b506080820151816004015560a0820151816005015560c082015181600601559050507f16d92ebf8d1048dc9322cfd77b7ea85ffa1440e92b09dc45129944a0d30f8b0281338787876000886040516108699796959493929190610a32565b60405180910390a16000546040516323b872dd60e01b8152336004820152306024820152604481018490526001600160a01b03909116906323b872dd90606401602060405180830381600087803b1580156108c357600080fd5b505af11580156108d7573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108fb9190610bed565b505050505050565b82805461090f90610c0f565b90600052602060002090601f0160209004810192826109315760008555610977565b82601f1061094a57805160ff1916838001178555610977565b82800160010185558215610977579182015b8281111561097757825182559160200191906001019061095c565b50610983929150610987565b5090565b5b808211156109835760008155600101610988565b6000602082840312156109ae57600080fd5b5035919050565b6000602082840312156109c757600080fd5b81356001600160a01b03811681146109de57600080fd5b9392505050565b6000815180845260005b81811015610a0b576020818501810151868301820152016109ef565b81811115610a1d576000602083870101525b50601f01601f19169290920160200192915050565b8781526001600160a01b038716602082015260e060408201819052600090610a5c908301886109e5565b8281036060840152610a6e81886109e5565b6080840196909652505060a081019290925260c090910152949350505050565b634e487b7160e01b600052604160045260246000fd5b600082601f830112610ab557600080fd5b813567ffffffffffffffff80821115610ad057610ad0610a8e565b604051601f8301601f19908116603f01168101908282118183101715610af857610af8610a8e565b81604052838152866020858801011115610b1157600080fd5b836020870160208301376000602085830101528094505050505092915050565b60008060008060808587031215610b4757600080fd5b843567ffffffffffffffff80821115610b5f57600080fd5b610b6b88838901610aa4565b95506020870135915080821115610b8157600080fd5b50610b8e87828801610aa4565b949794965050505060408301359260600135919050565b600082610bc257634e487b7160e01b600052601260045260246000fd5b500490565b60008219821115610be857634e487b7160e01b600052601160045260246000fd5b500190565b600060208284031215610bff57600080fd5b815180151581146109de57600080fd5b600181811c90821680610c2357607f821691505b60208210811415610c4457634e487b7160e01b600052602260045260246000fd5b50919050565b600060208284031215610c5c57600080fd5b505191905056fea26469706673582212207401f2a6b99dee151942fc15953bff201fd7ab101e2354e9b1827d09882410cb64736f6c63430008090033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 954,
+        "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+        "label": "revnuToken",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_contract(RevnuToken)1268"
+      },
+      {
+        "astId": 957,
+        "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+        "label": "_bountiesCounter",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_struct(Counter)874_storage"
+      },
+      {
+        "astId": 996,
+        "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+        "label": "bountyRegistry",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_uint256,t_struct(Bounty)984_storage)"
+      },
+      {
+        "astId": 1001,
+        "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+        "label": "claimRegistry",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_bytes32,t_struct(Claim)991_storage)"
+      },
+      {
+        "astId": 1005,
+        "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+        "label": "claimEarnings",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_mapping(t_address,t_uint256)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_contract(RevnuToken)1268": {
+        "encoding": "inplace",
+        "label": "contract RevnuToken",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_mapping(t_bytes32,t_struct(Claim)991_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct RevnuRegistry.Claim)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Claim)991_storage"
+      },
+      "t_mapping(t_uint256,t_struct(Bounty)984_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => struct RevnuRegistry.Bounty)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Bounty)984_storage"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(Bounty)984_storage": {
+        "encoding": "inplace",
+        "label": "struct RevnuRegistry.Bounty",
+        "members": [
+          {
+            "astId": 971,
+            "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+            "label": "bountyId",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 973,
+            "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+            "label": "bountyCreator",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address"
+          },
+          {
+            "astId": 975,
+            "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+            "label": "actionId",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 977,
+            "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+            "label": "actionType",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 979,
+            "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+            "label": "actionCount",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 981,
+            "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+            "label": "noOfClaims",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 983,
+            "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+            "label": "reward",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "224"
+      },
+      "t_struct(Claim)991_storage": {
+        "encoding": "inplace",
+        "label": "struct RevnuRegistry.Claim",
+        "members": [
+          {
+            "astId": 986,
+            "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+            "label": "bountyId",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 988,
+            "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+            "label": "claimer",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address"
+          },
+          {
+            "astId": 990,
+            "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+            "label": "claimHash",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_bytes32"
+          }
+        ],
+        "numberOfBytes": "96"
+      },
+      "t_struct(Counter)874_storage": {
+        "encoding": "inplace",
+        "label": "struct Counters.Counter",
+        "members": [
+          {
+            "astId": 873,
+            "contract": "contracts/RevnuRegistry.sol:RevnuRegistry",
+            "label": "_value",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "32"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
