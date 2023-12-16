@@ -39,9 +39,11 @@ const config: HardhatUserConfig = {
       allowUnlimitedContractSize: true,
     },
     pegoMainNet: {
-      url: "https://rpc.pego.io/",
+      url: "https://node2.pegorpc.com",
       accounts: [PRIVATE_KEY],
       chainId: 20201022,
+      gas: 500000000000,
+      gasPrice: 500000000000,
       allowUnlimitedContractSize: true,
     },
     // Network name: PEGO Mainnet Chain ID: 20201022 Currency Symbol: PG RPC node: pegorpc.com node1.pegorpc.com node2.pegorpc.com node3.pegorpc.com
